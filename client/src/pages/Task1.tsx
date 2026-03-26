@@ -109,9 +109,9 @@ export default function Task1() {
                       >
                         Loading more...
                       </div>
-                    ) : (
+                    ) : person ? (
                       <PersonCard person={person} />
-                    )}
+                    ) : null}
                   </div>
                 );
               })}

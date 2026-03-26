@@ -5,6 +5,7 @@ interface PersonCardProps {
 }
 
 export default function PersonCard({ person }: PersonCardProps) {
+  if (!person) return null;
   const visibleHobbies = person.hobbies.slice(0, 2);
   const remainingCount = person.hobbies.length - 2;
 

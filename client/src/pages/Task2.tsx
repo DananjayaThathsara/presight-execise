@@ -27,7 +27,7 @@ export default function Task2() {
     }, 30);
 
     try {
-      const response = await fetch("/api/stream");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/stream`);
       const reader = response.body!.getReader();
       const decoder = new TextDecoder();
       let fullText = "";
