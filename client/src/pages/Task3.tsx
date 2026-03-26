@@ -17,7 +17,7 @@ export default function Task3() {
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
-    const socket = io("http://localhost:3001");
+    const socket = io(import.meta.env.VITE_API_URL);
     socketRef.current = socket;
 
     socket.on("connect", () => {

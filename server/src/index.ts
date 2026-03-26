@@ -9,7 +9,12 @@ import { processRouter } from "./modules/process/process.route";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://presightexercise.dananjayathathsara.com"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 //Task 1: GET /api/people

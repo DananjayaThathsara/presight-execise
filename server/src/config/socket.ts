@@ -8,8 +8,9 @@ let io: SocketIOServer;
 export function initializeSocket(httpServer: Server) {
   io = new SocketIOServer(httpServer, {
     cors: {
-      origin: "*",
+      origin: ["http://localhost:5173", "https://presightexercise.dananjayathathsara.com"],
       methods: ["GET", "POST"],
+      credentials: true,
     },
   });
 
