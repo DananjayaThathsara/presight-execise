@@ -19,7 +19,7 @@ export default function Task3() {
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
-    const socket = io(BASE_URL, {
+    const socket = io(import.meta.env.VITE_API_URL, {
       transports: ["websocket", "polling"],
       secure: true,
     });
