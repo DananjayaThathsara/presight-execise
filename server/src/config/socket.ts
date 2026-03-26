@@ -12,6 +12,7 @@ export function initializeSocket(httpServer: Server) {
       methods: ["GET", "POST"],
       credentials: true,
     },
+    transports: ["websocket", "polling"],
   });
 
   io.on("connection", (socket: Socket) => {
