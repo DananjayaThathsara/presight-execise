@@ -19,7 +19,7 @@ export default function Task3() {
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_API_URL, {
+    const socket = io(BASE_URL, {
       transports: ["websocket", "polling"],
       secure: true,
     });
@@ -54,7 +54,7 @@ export default function Task3() {
 
     for (let i = 0; i < 20; i++) {
       const jobId = `job-${i + 1}`;
-      await fetch("/api/process", {
+      await fetch(`${BASE_URL}/api/process`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
